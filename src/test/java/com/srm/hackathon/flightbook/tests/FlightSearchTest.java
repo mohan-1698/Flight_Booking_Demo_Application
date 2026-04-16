@@ -46,7 +46,6 @@ public class FlightSearchTest extends BaseTest {
     public void verifySameCitySelectionNotSupported() {
 
         HomePage homePage = new HomePage();
-
         boolean isSameCityPossible =
                 homePage.isSameCityOptionAvailable("Boston");
 

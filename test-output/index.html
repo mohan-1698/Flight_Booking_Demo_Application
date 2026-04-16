@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-FlightBook_Suite" class="navigator-link">
-              <span class="suite-name border-passed">FlightBook Suite</span>
+              <span class="suite-name border-failed">FlightBook Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -55,7 +55,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-FlightBook_Suite" class="navigator-link ">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">3 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">6 methods, 1 failed,   5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-FlightBook_Suite" class="hide-methods failed suite-FlightBook_Suite"> (hide)</a> <!-- hide-methods failed suite-FlightBook_Suite -->
+                      <a href="#" panel-name="suite-FlightBook_Suite" class="show-methods failed suite-FlightBook_Suite"> (show)</a> <!-- show-methods failed suite-FlightBook_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-FlightBook_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-FlightBook_Suite" title="com.srm.hackathon.flightbook.tests.FlightSearchTest" class="method navigator-link" hash-for-method="verifySameCitySelectionNotSupported">verifySameCitySelectionNotSupported</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-FlightBook_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -126,11 +140,6 @@
                         <a href="#" panel-name="suite-FlightBook_Suite" title="com.srm.hackathon.flightbook.tests.PurchaseTest" class="method navigator-link" hash-for-method="verifyPurchaseWithoutFillingForm">verifyPurchaseWithoutFillingForm</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-FlightBook_Suite" title="com.srm.hackathon.flightbook.tests.FlightSearchTest" class="method navigator-link" hash-for-method="verifySameCitySelectionNotSupported">verifySameCitySelectionNotSupported</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content passed suite-FlightBook_Suite -->
                   </li>
                 </ul>
@@ -143,21 +152,30 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-FlightBook_Suite" class="panel FlightBook_Suite">
-          <div class="suite-FlightBook_Suite-class-passed">
+          <div class="suite-FlightBook_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.srm.hackathon.flightbook.tests.FlightSelectionTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.srm.hackathon.flightbook.tests.FlightSearchTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyFlightSelectionAndDetails">
-                  </a> <!-- verifyFlightSelectionAndDetails -->
-                  <span class="method-name">verifyFlightSelectionAndDetails</span>
+                  <a name="verifySameCitySelectionNotSupported">
+                  </a> <!-- verifySameCitySelectionNotSupported -->
+                  <span class="method-name">verifySameCitySelectionNotSupported</span>
+                  <div class="stack-trace">java.lang.AssertionError: Same city selection should not be possible in this application expected [true] but found [false]
+	at com.srm.hackathon.flightbook.tests.FlightSearchTest.verifySameCitySelectionNotSupported(FlightSearchTest.java:52)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+... Removed 20 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-FlightBook_Suite-class-passed -->
+          </div> <!-- suite-FlightBook_Suite-class-failed -->
           <div class="suite-FlightBook_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -200,11 +218,19 @@
                   <span class="method-name">verifyFlightSearchLoadsResults</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-FlightBook_Suite-class-passed -->
+          <div class="suite-FlightBook_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.srm.hackathon.flightbook.tests.FlightSelectionTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifySameCitySelectionNotSupported">
-                  </a> <!-- verifySameCitySelectionNotSupported -->
-                  <span class="method-name">verifySameCitySelectionNotSupported</span>
+                  <a name="verifyFlightSelectionAndDetails">
+                  </a> <!-- verifyFlightSelectionAndDetails -->
+                  <span class="method-name">verifyFlightSelectionAndDetails</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -218,14 +244,25 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;FlightBook Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Flight Search Test&quot;&gt;
+&lt;suite thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;FlightBook Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.srm.hackathon.flightbook.listener.TestListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Flight Search Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.srm.hackathon.flightbook.tests.FlightSearchTest&quot;/&gt;
-      &lt;class name=&quot;com.srm.hackathon.flightbook.tests.FlightSelectionTest&quot;/&gt;
-      &lt;class name=&quot;com.srm.hackathon.flightbook.tests.PurchaseTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Flight Search Test --&gt;
+  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Flight Selection Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.srm.hackathon.flightbook.tests.FlightSelectionTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Flight Selection Test --&gt;
+  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Purchase Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.srm.hackathon.flightbook.tests.PurchaseTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Purchase Test --&gt;
 &lt;/suite&gt; &lt;!-- FlightBook Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -237,7 +274,13 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Flight Search Test (3 classes)</span>
+                <span class="test-name">Flight Search Test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Flight Selection Test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Purchase Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -267,32 +310,32 @@ data.addRows(6);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyPurchaseWithValidData')
 data.setCell(0, 2, 'com.srm.hackathon.flightbook.tests.PurchaseTest')
-data.setCell(0, 3, 4512);
+data.setCell(0, 3, 9199);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'verifyPurchaseWithoutFillingForm')
 data.setCell(1, 2, 'com.srm.hackathon.flightbook.tests.PurchaseTest')
-data.setCell(1, 3, 3170);
+data.setCell(1, 3, 5912);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyFlightDetailsInTable')
-data.setCell(2, 2, 'com.srm.hackathon.flightbook.tests.FlightSearchTest')
-data.setCell(2, 3, 3152);
+data.setCell(2, 1, 'verifyFlightSelectionAndDetails')
+data.setCell(2, 2, 'com.srm.hackathon.flightbook.tests.FlightSelectionTest')
+data.setCell(2, 3, 2645);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyFlightSelectionAndDetails')
-data.setCell(3, 2, 'com.srm.hackathon.flightbook.tests.FlightSelectionTest')
-data.setCell(3, 3, 2614);
+data.setCell(3, 1, 'verifyFlightSearchLoadsResults')
+data.setCell(3, 2, 'com.srm.hackathon.flightbook.tests.FlightSearchTest')
+data.setCell(3, 3, 1609);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'verifyFlightSearchLoadsResults')
+data.setCell(4, 1, 'verifyFlightDetailsInTable')
 data.setCell(4, 2, 'com.srm.hackathon.flightbook.tests.FlightSearchTest')
-data.setCell(4, 3, 1526);
+data.setCell(4, 3, 1540);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'verifySameCitySelectionNotSupported')
 data.setCell(5, 2, 'com.srm.hackathon.flightbook.tests.FlightSearchTest')
-data.setCell(5, 3, 404);
+data.setCell(5, 3, 414);
 window.suiteTableData['FlightBook_Suite']= { tableData: data, tableDiv: 'times-div-FlightBook_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 15 seconds</span>
+              <span class="suite-total-time">Total running time: 21 seconds</span>
               <div id="times-div-FlightBook_Suite">
               </div> <!-- times-div-FlightBook_Suite -->
             </div> <!-- times-div -->
@@ -323,79 +366,93 @@ return data;
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyFlightDetailsInTable</span>
-                <span class="method-start">5396 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">8553 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">8824 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyFlightSearchLoadsResults</span>
-                <span class="method-start">14622 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">16151 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">16330 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifySameCitySelectionNotSupported</span>
-                <span class="method-start">19724 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">20130 ms</span>
-              </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.srm.hackathon.flightbook.tests.FlightSelectionTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">20305 ms</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyFlightSelectionAndDetails</span>
-                <span class="method-start">22929 ms</span>
+                <span class="method-start">4125 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.srm.hackathon.flightbook.tests.FlightSearchTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyFlightDetailsInTable</span>
+                <span class="method-start">4593 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">25546 ms</span>
+                <span class="method-start">6139 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">6264 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.srm.hackathon.flightbook.tests.FlightSelectionTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">6773 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.srm.hackathon.flightbook.tests.PurchaseTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">25751 ms</span>
+                <span class="method-start">7541 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyPurchaseWithValidData</span>
-                <span class="method-start">29423 ms</span>
+                <span class="method-start">9009 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.srm.hackathon.flightbook.tests.FlightSearchTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyFlightSearchLoadsResults</span>
+                <span class="method-start">9052 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">33937 ms</span>
+                <span class="method-start">10663 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">34170 ms</span>
+                <span class="method-start">10859 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyPurchaseWithoutFillingForm</span>
-                <span class="method-start">37255 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifySameCitySelectionNotSupported</span>
+                <span class="method-start">17179 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">40426 ms</span>
+                <span class="method-start">17853 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.srm.hackathon.flightbook.tests.PurchaseTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">18218 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">18470 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyPurchaseWithoutFillingForm</span>
+                <span class="method-start">22360 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">28274 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
