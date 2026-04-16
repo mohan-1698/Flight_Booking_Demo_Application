@@ -18,6 +18,37 @@ public class PurchasePage extends BasePage {
 
     @FindBy(xpath = "//p[contains(text(),'Price')]")
     private WebElement priceText;
+    
+    @FindBy(id = "inputName")
+    private WebElement name;
+
+    @FindBy(id = "address")
+    private WebElement address;
+
+    @FindBy(id = "city")
+    private WebElement city;
+
+    @FindBy(id = "state")
+    private WebElement state;
+
+    @FindBy(id = "zipCode")
+    private WebElement zipCode;
+
+    @FindBy(id = "creditCardNumber")
+    private WebElement cardNumber;
+
+    @FindBy(id = "creditCardMonth")
+    private WebElement cardMonth;
+
+    @FindBy(id = "creditCardYear")
+    private WebElement cardYear;
+
+    @FindBy(id = "nameOnCard")
+    private WebElement nameOnCard;
+
+    @FindBy(css = "input[type='submit']")
+    private WebElement purchaseBtn;
+
 
     // ✅ Verify navigation
     public boolean isPurchasePageLoaded() {
@@ -45,5 +76,29 @@ public class PurchasePage extends BasePage {
     // ✅ Get Price
     public String getPrice() {
         return priceText.getText().split(":")[1].trim();
+    }
+    
+ // ✅ Fill form
+    public void fillPurchaseForm() {
+
+        waitUtils.waitForElementVisible(name);
+
+        name.sendKeys("John Doe");
+        address.sendKeys("123 Street");
+        city.sendKeys("New York");
+        state.sendKeys("NY");
+        zipCode.sendKeys("10001");
+        cardNumber.sendKeys("1234567812345678");
+        cardMonth.clear();
+        cardMonth.sendKeys("12");
+        cardYear.clear();
+        cardYear.sendKeys("2028");
+        nameOnCard.sendKeys("John Doe");
+    }
+
+    // ✅ Click purchase
+    public void clickPurchase() {
+        waitUtils.waitForElementClickable(purchaseBtn);
+        purchaseBtn.click();
     }
 }

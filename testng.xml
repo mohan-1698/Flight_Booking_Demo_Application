@@ -6,8 +6,9 @@
     <test name="Flight Search Test">
 
         <classes>
-            <!--  <class name="com.srm.hackathon.flightbook.tests.FlightSearchTest"/> -->
-            <class name="com.srm.hackathon.flightbook.tests.FlightSelectionTest"/>
+            <class name="com.srm.hackathon.flightbook.tests.FlightSearchTest"/>
+    		<class name="com.srm.hackathon.flightbook.tests.FlightSelectionTest"/>
+   			<class name="com.srm.hackathon.flightbook.tests.PurchaseTest"/>
         </classes>
 
     </test>
