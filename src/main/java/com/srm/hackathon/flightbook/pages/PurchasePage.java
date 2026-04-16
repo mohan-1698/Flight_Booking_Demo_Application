@@ -101,4 +101,17 @@ public class PurchasePage extends BasePage {
         waitUtils.waitForElementClickable(purchaseBtn);
         purchaseBtn.click();
     }
+    
+ // Clear name field
+    public void clearNameField() {
+        waitUtils.waitForElementVisible(name);
+        name.clear();
+    }
+
+    // Enter invalid card
+    public void enterInvalidCard(String value) {
+        waitUtils.waitForElementVisible(cardNumber);
+        cardNumber.clear();
+        cardNumber.sendKeys(value);
+    }
 }

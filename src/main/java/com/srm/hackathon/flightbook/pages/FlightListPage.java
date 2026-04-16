@@ -92,4 +92,10 @@ public class FlightListPage extends BasePage {
     public String getSelectedPrice() {
         return selectedPrice;
     }
+    
+ // ✅ Get page heading text
+    public String getHeadingText() {
+        waitUtils.waitForElementVisible(heading);
+        return heading.getText();
+    }
 }
